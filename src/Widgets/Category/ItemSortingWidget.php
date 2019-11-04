@@ -12,15 +12,24 @@ class ItemSortingWidget extends BaseWidget
 
     protected function getTemplateData($widgetSettings, $isPreview)
     {
+        $temp = [];
         $itemSortOptions = [];
         $result = [];
+        $translationMap = SearchOptions::TRANSLATION_MAP;
+
         if (array_key_exists("itemSortOptions", $widgetSettings))
         {
-            $itemSortOptions = $widgetSettings["itemSortOptions"]["mobile"];
+            $temp = $widgetSettings["itemSortOptions"]["mobile"];
+
+            foreach ($translationMap as $key => $value) {
+                if (in_array($key, $temp)) {
+                    array_push($itemSortOptions, $key);
+                }
+            }
         }
 
         $result["itemSortOptions"] = $itemSortOptions;
-        $result["translations"] = SearchOptions::TRANSLATION_MAP;
+        $result["translations"] = $translationMap;
         return $result;
     }
 
