@@ -23,10 +23,10 @@
                        :data-title="getTooltip(shippingProfile.parcelServicePresetId, selectedPaymentMethodId)"
                     >
                     <div class="icon">
-                        {#<img src="">#}
+                        <img v-if="shippingProfile.parcelServicePresetId === 4" src="https://cdn02.plentymarkets.com/iv4fji8dtb7e/frontend/img/DHL_Checkout.png">
                     </div><!--
                     --><div class="content">
-                        ${ shippingProfile.parcelServiceName } - ${ shippingProfile.parcelServicePresetName }
+                        ${ shippingProfile.parcelServiceName } ${ shippingProfile.parcelServicePresetName }
                         <div>
                             <small>
                                 ${ shippingProfile.shippingAmount | currency }
