@@ -109,7 +109,7 @@
                         </tr>
                     {% endif %} #}
 
-                    {% if ('item.variation_dimensions' in itemData or 'all' in itemData) %}
+                    {# {% if ('item.variation_dimensions' in itemData or 'all' in itemData) %}
                         <tr>
                             <td>{{ trans("Ceres::Template.singleItemDimensions") }}</td>
                             <td>
@@ -118,7 +118,7 @@
                                                 --><span>${ currentVariation.variation.heightMM }</span> mm
                             </td>
                         </tr>
-                    {% endif %}
+                    {% endif %} #}
 
                     {# {% if ('item.customs_tariff_number' in itemData or 'all' in itemData) %}
                         <tr v-if="currentVariation.item.customsTariffNumber !== ''">

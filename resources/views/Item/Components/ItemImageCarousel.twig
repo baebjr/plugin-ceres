@@ -2,9 +2,9 @@
     <div itemscope itemtype="http://schema.org/Thing">
         <div class="single-carousel owl-carousel owl-theme owl-single-item" ref="single">
             <div v-for="image in singleImages">
-                <a :href="image.url" data-lightbox="single-big-image-gallery">
+                {# <a :href="image.url" data-lightbox="single-big-image-gallery"> #}
                     <img class="owl-lazy" :data-src="image.url" :alt="getAltText(image)" :title="getItemName()" itemprop="image">
-                </a>
+                {# </a> #}
             </div>
         </div>
         <div v-if="showThumbs" id="thumb-carousel" class="owl-thumbs owl-carousel owl-theme owl-single-item" ref="thumbs">
