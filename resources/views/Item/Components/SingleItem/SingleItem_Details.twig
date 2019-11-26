@@ -10,15 +10,12 @@
 
 <hr>
 
-<div class="producertag h6 producer text-muted" v-if="currentVariation.filter.hasManufacturer">
-    Hersteller &nbsp; ${ currentVariation.item.manufacturer.externalName }
+<div class="producertag small producer text-muted" v-if="currentVariation.filter.hasManufacturer">
+    <b>{{ trans("Ceres::Template.singleItemManufacturer") }}</b> &nbsp; ${ currentVariation.item.manufacturer.externalName }
 </div>
 
-<div class="mb-5">
-    <span class="articlenumber small text-muted">
-        <b>{{ trans("Ceres::Template.singleItemNumber") }} </b>
-        <span>${ currentVariation.item.id }</span>
-    </span>
+<div class="articlenumber small text-muted">
+    <b>{{ trans("Ceres::Template.singleItemNumber") }}</b> &nbsp; ${ currentVariation.item.id }
 </div>
 
 <!-- Variation -->
@@ -54,11 +51,16 @@
     <span :content="currentVariation.prices.default.currency"></span>
 </span>
 
-<div class="base-price text-muted my-3" v-if="currentVariation.unit">
+<span class="vat small text-muted">
+    * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
+    <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+</span>
+
+{# <div class="base-price text-muted my-3" v-if="currentVariation.unit">
     <div>
-        {# {{ trans("Ceres::Template.singleItemContent") }}
+        {{ trans("Ceres::Template.singleItemContent") }}
         <span>${ currentVariation.unit.content | numberFormat } </span>
-        <span>${ currentVariation.unit.names.name }</span> #}
+        <span>${ currentVariation.unit.names.name }</span>
     </div>
     <div v-if="currentVariation.variation.mayShowUnitPrice">
         {{ trans("Ceres::Template.singleItemUnitPrice") }}
@@ -66,7 +68,7 @@
             ${ variationGraduatedPrice.basePrice | specialOffer(currentVariation.prices, "basePrice") }
         </span>
     </div>
-</div>
+</div> #}
 
 <slot name="after-price"></slot>
 
@@ -111,10 +113,5 @@
 <slot name="additional-content-after-add-to-basket"></slot>
 
 <hr>
-
-<span class="vat small text-muted">
-                        * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
-    <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
-                    </span>
 
 <slot name="additional-content-after-vat"></slot>

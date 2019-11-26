@@ -7,11 +7,11 @@
             </li>
         {% endif %}
 
-        {% if 'item.technical_data' in itemData or 'all' in itemData %}
+        {# {% if 'item.technical_data' in itemData or 'all' in itemData %}
             <li class="nav-item" v-if="isTechnicalDataTabActive">
                 <a :class="{ 'active': !isDescriptionTabActive && isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" :href="'#data-' + currentVariation.variation.id" role="tab">{{ trans("Ceres::Template.singleItemTechnicalData") }}</a>
             </li>
-        {% endif %}
+        {% endif %} #}
 
         <li class="nav-item">
             <a :class="{ 'active': !isDescriptionTabActive && !isTechnicalDataTabActive }" class="nav-link" data-toggle="tab" href="#assessments-details" role="tab">{{ trans("Ceres::Template.singleItemMoreDetails") }}</a>
@@ -41,7 +41,7 @@
                     <tbody>
                     {% if 'item.id' in itemData or 'all' in itemData %}
                         <tr>
-                            <td>{{ trans("Ceres::Template.singleItemId") }}</td>
+                            <td>{{ trans("Ceres::Template.singleItemNumber") }}</td>
                             <td>${ currentVariation.item.id }</td>
                         </tr>
                     {% endif %}
@@ -53,12 +53,12 @@
                         </tr>
                     {% endif %}
 
-                    {% if 'item.age_rating' in itemData or 'all' in itemData %}
+                    {# {% if 'item.age_rating' in itemData or 'all' in itemData %}
                         <tr>
                             <td>{{ trans("Ceres::Template.singleItemAge") }}</td>
                             <td>{{ AgeRestriction.getText(item.documents[0].data.item.ageRestriction) }}</td>
                         </tr>
-                    {% endif %}
+                    {% endif %} #}
 
                     {% if ('item.external_id' in itemData or 'all' in itemData) %}
                         <tr v-if="currentVariation.variation.externalId !== ''">
@@ -88,12 +88,12 @@
                         </tr>
                     {% endif %}
 
-                    {% if 'item.variationBase_content' in itemData or 'all' in itemData %}
+                    {# {% if 'item.variationBase_content' in itemData or 'all' in itemData %}
                         <tr v-if="currentVariation.unit">
                             <td>{{ trans("Ceres::Template.singleItemContent") }}</td>
                             <td>${ currentVariation.unit.content } ${ currentVariation.unit.names.name }</td>
                         </tr>
-                    {% endif %}
+                    {% endif %} #}
 
                     {% if 'item.weightG' in itemData or 'all' in itemData %}
                         <tr v-if="currentVariation.variation.weightG !== ''">
@@ -102,12 +102,12 @@
                         </tr>
                     {% endif %}
 
-                    {% if 'item.weightNetG' in itemData or 'all' in itemData %}
+                    {# {% if 'item.weightNetG' in itemData or 'all' in itemData %}
                         <tr v-if="currentVariation.variation.weightNetG !== ''">
                             <td>{{ trans("Ceres::Template.singleItemNetWeight") }}</td>
                             <td>${ currentVariation.variation.weightNetG } g</td>
                         </tr>
-                    {% endif %}
+                    {% endif %} #}
 
                     {% if ('item.variation_dimensions' in itemData or 'all' in itemData) %}
                         <tr>
@@ -120,12 +120,12 @@
                         </tr>
                     {% endif %}
 
-                    {% if ('item.customs_tariff_number' in itemData or 'all' in itemData) %}
+                    {# {% if ('item.customs_tariff_number' in itemData or 'all' in itemData) %}
                         <tr v-if="currentVariation.item.customsTariffNumber !== ''">
                             <td>{{ trans("Ceres::Template.singleItemCustomsTariffNumber") }}</td>
                             <td>${ currentVariation.item.customsTariffNumber }</td>
                         </tr>
-                    {% endif %}
+                    {% endif %} #}
                     </tbody>
                 </table>
             </div>
