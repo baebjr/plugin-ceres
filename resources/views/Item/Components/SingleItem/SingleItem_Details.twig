@@ -78,12 +78,12 @@
     </span>
 </span>
 
-<div class="my-3">
+<div class="mt-3 mb-3">
     <div class="w-100">
         <slot name="before-add-to-basket"></slot>
     </div>
 
-    <div class="col-12 col-sm-7 col-md-12 col-lg-8 my-3">
+    <div>
         {{ AddToBasket.printVueComponent(
             "currentVariation",
             false,
@@ -101,6 +101,13 @@
     </div>
 </div>
 
+
+<!-- ./ITEM DETAIL -->
+
+<slot name="additional-content-after-add-to-basket"></slot>
+
+<hr>
+
 {% if services.url.isRouteEnabled("wish-list") %}
     <div class="row">
         <div class="col-12">
@@ -108,10 +115,5 @@
         </div>
     </div>
 {% endif %}
-<!-- ./ITEM DETAIL -->
-
-<slot name="additional-content-after-add-to-basket"></slot>
-
-<hr>
 
 <slot name="additional-content-after-vat"></slot>
