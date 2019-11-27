@@ -128,7 +128,7 @@
                     {% endif %} #}
 
                     {# if 'barcodes' in itemData or 'all' in itemData #}
-                        <tr v-if="currentVariation.barcodes &&  currentVariation.barcodes[0].code !== ''">
+                        <tr v-if="currentVariation.barcodes.length > 0 &&  currentVariation.barcodes[0].code !== ''">
                             <td>{{ trans("Ceres::Template.singleItemGTIN") }}</td>
                             <td>${ currentVariation.barcodes[0].code }</td>
                         </tr>
