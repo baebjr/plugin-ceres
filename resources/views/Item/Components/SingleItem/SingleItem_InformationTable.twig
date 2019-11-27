@@ -126,6 +126,14 @@
                             <td>${ currentVariation.item.customsTariffNumber }</td>
                         </tr>
                     {% endif %} #}
+
+                    {% if 'barcodes' in itemData or 'all' in itemData %}
+                        <tr>
+                            <td>{{ trans("Ceres::Template.singleItemGTIN") }}</td>
+                            <td>${ barcodes[0].code }</td>
+                        </tr>
+                    {% endif %}
+
                     </tbody>
                 </table>
             </div>
