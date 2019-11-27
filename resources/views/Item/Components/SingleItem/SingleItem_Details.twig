@@ -46,13 +46,13 @@
 
 <span class="price h1">
     <span :content="currentVariation.prices.default.price.value">
-        ${ variationTotalPrice | currency(currentVariation.prices.default.currency) }*
+        ${ variationTotalPrice | currency(currentVariation.prices.default.currency) }
     </span>
     <span :content="currentVariation.prices.default.currency"></span>
 </span>
 
 <span class="vat small text-muted">
-    * {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
+    {% if services.customer.showNetPrices() %}{{ trans("Ceres::Template.singleItemExclVAT") }}{% else %}{{ trans("Ceres::Template.singleItemInclVAT") }}{% endif %} {{ trans("Ceres::Template.singleItemExclusive") }}
     <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemShippingCosts") }}">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
 </span>
 
@@ -77,6 +77,7 @@
         ${ currentVariation.variation.availability.names.name }
     </span>
 </span>
+<span>{{ trans("Ceres::Template.singleItemAvailabilityPostNote") }}</span>
 
 <div class="mt-3 mb-3">
     <div class="w-100">

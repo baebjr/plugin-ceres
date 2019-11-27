@@ -71,7 +71,7 @@
                             </div>
 
                             <div class="price">
-                                ${ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }*
+                                ${ item.prices.default.unitPrice.formatted | specialOffer(item.prices, "unitPrice", "formatted") }
                             </div>
                         </div>
                     </div>
@@ -87,7 +87,7 @@
                     {# {{ AddToBasket.printVueComponent( "item", false, false, { ":has-price": "item | hasItemDefaultPrice" } ) }} #}
 
                     <span class="vat small text-muted">
-                        * <span v-if="showNetPrices">{{ trans("Ceres::Template.itemExclVAT") }}</span>
+                        <span v-if="showNetPrices">{{ trans("Ceres::Template.itemExclVAT") }}</span>
                         <span v-else>{{ trans("Ceres::Template.itemInclVAT") }}</span>
                         {{ trans("Ceres::Template.itemExclusive") }}
                         <a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.itemShippingCosts") }}">{{ trans("Ceres::Template.itemShippingCosts") }}</a>
