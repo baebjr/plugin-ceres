@@ -79,7 +79,7 @@
 </span>
 
 {% set shippingInfo %}
-<a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="foo">{{ trans("Ceres::Template.singleItemShippingCosts") }}</a>
+<a {% if ceresConfig.global.shippingCostsCategoryId > 0 %} data-toggle="modal" href="#shippingscosts"{% endif %} title="{{ trans("Ceres::Template.singleItemPackageDeliveryTime") }}">{{ trans("Ceres::Template.singleItemPackageDeliveryTime") }}</a>
 {% endset %}
 <div>{{ ((trans("Ceres::Template.singleItemAvailabilityPostNote"))|replace({':Paketlaufzeiten': shippingInfo}))|raw }}</div>
 
