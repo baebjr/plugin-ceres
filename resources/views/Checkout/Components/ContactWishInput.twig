@@ -3,11 +3,8 @@
         <textarea id="contact_wish" @change="updateContactWish($event)" class="no-resize" rows="5"></textarea>
         <label for="contact_wish">{{ trans("Ceres::Template.checkoutContactWishMessage") }}</label>
 
-        <div class="content">
-            a {{ trans("Ceres::Template.checkoutContactWishPreText")|raw }}
+        <div class="input-unit-pretext">
+            {{ trans("Ceres::Template.checkoutContactWishPreText")|raw }}
         </div>
     </div>
-
-    <div>b {{ trans("Ceres::Template.checkoutContactWishPreText")|raw }}</div>
 </script>
-<div>c {{ trans("Ceres::Template.checkoutContactWishPreText")|raw }}</div>
