@@ -2,5 +2,9 @@
     <div class="input-unit textarea cmp-contact">
         <textarea id="contact_wish" @change="updateContactWish($event)" class="no-resize" rows="5"></textarea>
         <label for="contact_wish">{{ trans("Ceres::Template.checkoutContactWishMessage") }}</label>
+
+        <div class="content">
+            {{ trans("Ceres::Template.checkoutContactWishPreText")|raw }}
+        </div>
     </div>
 </script>
