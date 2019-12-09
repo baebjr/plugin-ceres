@@ -247,6 +247,11 @@
             "description"   : "Add item lists in the single item view."
         },
         {
+            "key"           : "SingleItem.ItemListTwoContainer",
+            "name"          : "Single item: Container for item lists 2",
+            "description"   : "Add item lists 2 in the single item view."
+        },
+        {
             "key"           : "SingleItem.FeedbackContainer",
             "name"          : "Single item: Container for customer feedback",
             "description"   : "Add customer feedback in the single item view."

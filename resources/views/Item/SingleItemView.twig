@@ -19,6 +19,8 @@
     <template #add-detail-tabs>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabs", item.documents[0].data) }}</template>
     <template #add-detail-tabs-content>{{ LayoutContainer.show("Ceres::SingleItem.AddDetailTabsContent", item.documents[0].data) }}</template>
     <template #item-list-container>{{ LayoutContainer.show("Ceres::SingleItem.ItemListContainer", item) }}</template>
+    <template #item-list-two-container>{{ LayoutContainer.show("Ceres::SingleItem.ItemListTwoContainer", item) }}</template>
+
     <template #feedback-container>{{ LayoutContainer.show("Ceres::SingleItem.FeedbackContainer", item) }}</template>
     <template #image-carousel>
         {% set ImageCarouselOverride = LayoutContainer.show("Ceres::SingleItem.ImageCarousel") %}
@@ -28,7 +30,7 @@
             {{ ImageCarouselOverride }}
         {% endif %}
     </template>
-    <template #cross-selling-accessory>
+    {# <template #cross-selling-accessory>
     {% if accessory|length > 0 %}
           <div class="crossSelling">
             <hr>
@@ -55,6 +57,6 @@
           </div>
         </div>
     {% endif %}
-</template>
+    </template> #}
 
 </single-item>
