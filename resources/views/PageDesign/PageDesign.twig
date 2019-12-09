@@ -297,33 +297,6 @@
                     Wir antworten meist noch am gleichen Werktag.</p>
                 </div>
             </div>
-
-
-            <script>
-                var accordion = document.getElementsByClassName('select_motor');
-                
-                for (var i = 0; i < accordion.length; i++) {
-                    accordion[i].addEventListener('click', function() {
-                        var panel = this.nextElementSibling;
-                        if (panel.style.maxHeight) {
-                            panel.style.maxHeight = null;
-                            this.classList.remove('active');
-                        } else {
-                            panel.style.maxHeight = panel.scrollHeight + 'px';
-                            this.classList.add('active');
-                        }
-                        
-                        var accordion = document.getElementsByClassName('select_motor');
-                        for (var i = 0; i < accordion.length; i++) {
-                            if (accordion[i] === this)
-                                continue;
-                                
-                            accordion[i].classList.remove('active');
-                            accordion[i].nextElementSibling.style.maxHeight = null;
-                        }
-                    });
-                }
-            </script>
         </div>
 
         {% include getPartial('footer') %}
@@ -433,6 +406,32 @@
         <!-- ./SHIPPINGCOSTS MODAL -->
     </div>
 </div>
+
+<script>
+    var accordion = document.getElementsByClassName('select_motor');
+    
+    for (var i = 0; i < accordion.length; i++) {
+        accordion[i].addEventListener('click', function() {
+            var panel = this.nextElementSibling;
+            if (panel.style.maxHeight) {
+                panel.style.maxHeight = null;
+                this.classList.remove('active');
+            } else {
+                panel.style.maxHeight = panel.scrollHeight + 'px';
+                this.classList.add('active');
+            }
+            
+            var accordion = document.getElementsByClassName('select_motor');
+            for (var i = 0; i < accordion.length; i++) {
+                if (accordion[i] === this)
+                    continue;
+                    
+                accordion[i].classList.remove('active');
+                accordion[i].nextElementSibling.style.maxHeight = null;
+            }
+        });
+    }
+</script>
 
 <script>
     App = {
