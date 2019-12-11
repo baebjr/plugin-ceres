@@ -19,7 +19,7 @@
         <i class="fa fa-arrow-up" aria-hidden="true"></i>
     </div>
 
-    {% if numberOfFeatures > 0 %}
+{#     {% if numberOfFeatures > 0 %}
         <div class="footer-features py-3 container-max">
             <div class="row">
                 {% for i in 1..numberOfFeatures %}
@@ -30,7 +30,7 @@
                 {% endfor %}
             </div>
         </div>
-    {% endif %}
+    {% endif %} #}
 
 
     <div class="container-max footer-content">
@@ -114,16 +114,11 @@
                 {% autoescape false %}
                     {% set lang = services.sessionStorage.getLang() %}
 
-                    <a href="{{ trans("Ceres::Template.footerNewsroomURL")|raw }}">{{ trans("Ceres::Template.footerNewsroom") }}</a>
-
-                    {% set url = services.url.getCategoryURL(170, lang).toAbsoluteUrl(true) %}
-                    <a href="{{ url }}">{{ trans("Ceres::Template.footerShipping", {"hyphen": "&shy;"}) }}</a>
+                    <a href="{{ trans("Ceres::Template.footerNewsroomURL")|raw }}" target="_blank"><i class="fa fa-external-link-square" aria-hidden="true"></i>{{ trans("Ceres::Template.footerNewsroom") }}</a>
 
                     {% set url = services.url.getCategoryURL(85, lang).toAbsoluteUrl(true) %}
-                    <a href="{{ url }}">{{ trans("Ceres::Template.footerShipping", {"hyphen": "&shy;"}) }}</a>
+                    <a href="{{ url }}">{{ trans("Ceres::Template.footerShipping", {"hyphen": "&shy;"}) }} & {{ trans("Ceres::Template.footerPaymentMethods", {"hyphen": "&shy;"}) }}</a>
 
-                    {% set url = services.url.getCategoryURL(85, lang).toAbsoluteUrl(true) %}
-                    <a href="{{ url }}">{{ trans("Ceres::Template.footerPaymentMethods", {"hyphen": "&shy;"}) }} & {{ trans("Ceres::Template.footerPaymentMethods", {"hyphen": "&shy;"}) }}</a>
 
 
                 {% endautoescape %}
