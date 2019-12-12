@@ -119,8 +119,12 @@
                     {% set url = services.url.getCategoryURL(170, lang).toAbsoluteUrl(true) %}
                     <a href="{{ url }}">{{ trans("Ceres::Template.footerShipping", {"hyphen": "&shy;"}) }} & {{ trans("Ceres::Template.footerPaymentMethods", {"hyphen": "&shy;"}) }}</a>
 
+                    {% set url = services.url.getCategoryURL(175, lang).toAbsoluteUrl(true) %}
+                    <a href="{{ url }}">{{ trans("Ceres::Template.footerWarranty", {"hyphen": "&shy;"}) }}</a>
 
-
+                    {% if (config("Ceres.contact.shop_mail") | length > 0 and config("Ceres.contact.shop_mail") != "your@email.com") or config('IO.routing.category_contact') > 0 %}
+                        <a href="{{ urls.contact }}">{{ trans("Ceres::Template.footerContact") }}</a>
+                    {% endif %}
                 {% endautoescape %}
             </div>
             <div class="static-link-list">
