@@ -80,7 +80,7 @@
                         </div>
                     </div>
 
-                    <div class="col-12 text-sm-right">
+                    <div class="col-12">
                         <div class="input-unit textarea" data-validate="text">
                             <textarea name="{{ formId }}_message" id="{{ formId }}_message" class="no-resize" rows="15"></textarea>
                             <label for="{{ formId }}_message">{{ trans('Ceres::Template.contactMessage') }}*</label>
@@ -112,7 +112,7 @@
                     <hr>
                     {% if ceresConfig.contact.enableConfirmingPrivacyPolicy %}
                         <div class="col-12">
-                            <div class="form-check" data-validate="">
+                            <div class="form-check" data-validate="" style="text-align: right">
                                 <input class="form-check-input" type="checkbox" id="{{ formId }}_privacy_check" name="{{ formId }}_privacy_check">
                                 <label class="form-check-label" for="{{ formId }}_privacy_check">
                                     {% autoescape false %}
