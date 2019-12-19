@@ -67,10 +67,14 @@
                 </accept-privacy-policy-check>
             </div>
         </div>
-        <div class="border-top mt-2 text-right">
+        <div "modal-footer justify-content-between pl-0 pr-0 pb-0">
             {{ LayoutContainer.show("Ceres::RegistrationOverlay.ExtendOverlayButtons") }}
             
-            <button :disabled="isDisabled" class="btn btn-appearance btn-primary btn-medium mt-3" :class="buttonSizeClass">
+            <div class="small">
+                * {{ trans("Ceres::Template.contactRequiredField") }}
+            </div>
+
+            <button :disabled="isDisabled" class="btn btn-appearance btn-primary btn-medium" :class="buttonSizeClass">
                 <i class="fa fa-user-plus" v-waiting-animation="isDisabled" aria-hidden="true"></i> 
                 {{ trans("Ceres::Template.regRegister") }}
             </button>
