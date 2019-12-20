@@ -125,12 +125,15 @@
                     {% if (config("Ceres.contact.shop_mail") | length > 0 and config("Ceres.contact.shop_mail") != "your@email.com") or config('IO.routing.category_contact') > 0 %}
                         <a href="{{ urls.contact }}">{{ trans("Ceres::Template.footerContact") }}</a>
                     {% endif %}
+
+                    {% set url = services.url.getCategoryURL(181, lang).toAbsoluteUrl(true) %}
+                    <a href="{{ url }}">{{ trans("Ceres::Template.footerDealerRegistration", {"hyphen": "&shy;"}) }}</a>
                 {% endautoescape %}
             </div>
             <div class="static-link-list">
                 {% autoescape false %}
                     {% set lang = services.sessionStorage.getLang() %}
-                    {% set url = services.url.getCategoryURL(82, lang).toAbsoluteUrl(true) %}
+                    {% set url = services.url.getCategoryURL(178, lang).toAbsoluteUrl(true) %}
                     <a href="{{ url }}">{{ trans("Ceres::Template.footerBatteryDisposal", {"hyphen": "&shy;"}) }}</a>
 
                     <a href="{{ urls.cancellationRights }}">{{ trans("Ceres::Template.footerCancellationRight", {"hyphen": "&shy;"}) }}</a>
